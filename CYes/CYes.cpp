@@ -2,11 +2,40 @@
 //
 
 #include <iostream>
+#include <stdio.h>
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
-	printf("hello world\n");
+	/*printf("hello world!!\n");
+	int a = 25;
+	int b = 45;
+	printf("a+b=%d\n", a + b);*/
+
+	/*int a = 0;
+	int b = 0;
+	scanf("%d %d", &a, &b);
+	printf("%d %d", a, b);
+	return 0;*/
+
+	/*int a;
+	int b;
+	printf("请输入两个整数:");
+	scanf("%d %d", &a, &b);
+
+	printf("%d + %d = %d", a, b, a + b);*/
+
+	//printf("%f", 10.0 / 3 * 3);//C里面要注意不同数据类型相除得结果
+
+	/*double foot;
+	double inch;
+	printf("输入身高的尺和寸：");
+	scanf("%lf %lf", &foot, &inch);
+	printf("身高是%f米。\n", (foot + inch / 12) * 0.3048);*/
+
+
+
+	return 0;
+
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
