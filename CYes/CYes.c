@@ -1,7 +1,7 @@
 ﻿// CYes.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include <iostream>
+//#include <iostream>
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>//bool类型引用库
@@ -298,7 +298,7 @@ int question6()
 void statnum()
 {
 	const int number = 10;
-	int count[number];
+	int count[10];
 	int x;
 
 	for (int i = 0; i < number; i++)
@@ -346,7 +346,43 @@ int Fraction2Decimal()
 
 }
 
+//判断素数函数
+int isPrime(int x)
+{
+	int ret = 1;
+	if (x == 1 || (x % 2 == 0 && x != 2)) ret = 0;
+	for (int i = 3; i < sqrt(x); i+=2)
+	{
+		if (x % i == 0)
+		{
+			ret = 0;
+			break;
+		}
+	}
+	return ret;
+}
 
+//通过结构链接面值和面额
+int coins()
+{
+	int amount[] = { 1,5,10,25,50 };
+	char *name[] = { "penny", "nickel","dime","quarter","half_dollor" };
+
+	struct
+	{
+		int amount;
+		char *name;
+	}coins[] = 
+	{
+		{1,"penny"},
+		{5,"nickel"},
+		{10,"dime"},
+		{25,"quarter"},
+		{50,"half_dollor"}
+	};
+
+	return 0;
+}
 
 int main()
 {
@@ -394,7 +430,14 @@ int main()
 
 	//statnum();
 
-	Fraction2Decimal();
+	//Fraction2Decimal();
+
+	//int a[10] = { 2,4,6,7,1,98,};
+	//for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++)
+	//{
+	//	printf("%d ", a[i]);
+	//}
+	////数组作为函数参数时，要传入数组大小，不能再参数内直接获取数组大小
 
 
 	return 0;
