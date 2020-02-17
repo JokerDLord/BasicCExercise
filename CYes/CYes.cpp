@@ -320,6 +320,32 @@ void statnum()
 	}
 }
 
+//请写一个程序，输入一个分数，计算出它的小数形式。无论是否可以除尽，输出最多小数点后200位。
+//输入格式:
+//
+//形如
+//
+//a / b
+//
+//的两个数，其中10 <= a < b < 100。也就是说，这个小数一定是小于1的正数。
+//	提示：输入是带着两个数中间的“ / ”的，所以scanf应采用“ % d / % d”这样的输入格式。
+int Fraction2Decimal()
+{
+	int numerator, denominator, count = 0, rem;
+	scanf("%d/%d", &numerator, &denominator);
+	printf("0.");
+	do
+	{
+		rem = numerator * 10 / denominator;
+		printf("%d", rem);
+		numerator = numerator * 10 % denominator;
+		count++;
+	} while (count <= 200 && (numerator != 0 || rem != 0));
+	printf("\n");
+	return 0;
+
+}
+
 
 
 int main()
@@ -366,7 +392,9 @@ int main()
 	//question5();
 	//question6();
 
-	statnum();
+	//statnum();
+
+	Fraction2Decimal();
 
 
 	return 0;
