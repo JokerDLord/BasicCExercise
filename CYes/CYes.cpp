@@ -4,6 +4,9 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>//bool类型引用库
+#include <stdlib.h>
+#include <time.h>
 
 
 
@@ -231,6 +234,93 @@ int question4()
 	return 0;
 }
 
+//整数求逆序
+int reverseorder()
+{
+	int x;
+	scanf("%d", &x);
+	
+	int digit;//逆序时的每一位
+	int ret = 0;//
+	while (x>0)
+	{
+		digit = x % 10;
+		printf("%d", digit);
+		ret = ret * 10 + digit;
+		//printf("%d", ret);
+		x /= 10;
+	}
+	//printf("%d", ret);
+	return 0;
+}
+
+//奇数偶数统计
+int question5()
+{
+	int odd = 0, even = 0, x;
+	
+	while (scanf("%d", &x))
+	{
+		if (x == -1) break;
+		else if (x % 2 == 0)
+		{
+			even++;
+		}
+		else if (x % 2 == 1)
+		{
+			odd++;
+		}
+	} 	
+	printf("%d %d", odd, even);
+	return 0;
+}
+
+int question6()
+{
+	int num, rem;
+	int count = 0, binum = 0;
+	scanf("%d", &num);
+	while (num > 0)
+	{
+		count += 1;
+		rem = num % 10;
+		if (rem % 2 == count % 2)
+		{
+			binum += pow(2, count - 1);
+		}
+		num /= 10;
+	}
+	printf("%d", binum);
+	return 0;
+}
+
+//统计0-9各个数字出现次数
+void statnum()
+{
+	const int number = 10;
+	int count[number];
+	int x;
+
+	for (int i = 0; i < number; i++)
+	{
+		count[i] = 0;
+	}
+	scanf("%d", &x);
+	while (x != -1)
+	{
+		if (x >= 0 && x <= 9)
+		{
+			count[x]++;
+		}
+		scanf("%d", &x);
+	}
+	for (int j = 0; j < number; j++)
+	{
+		printf("%d ", count[j]);
+	}
+}
+
+
 
 int main()
 {
@@ -271,7 +361,12 @@ int main()
 	//int UTC = question1();
 	//question2();
 	//question3();
-	question4();
+	//question4();
+	//reverseorder();
+	//question5();
+	//question6();
+
+	statnum();
 
 
 	return 0;
