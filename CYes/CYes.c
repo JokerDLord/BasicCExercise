@@ -7,6 +7,7 @@
 #include <stdbool.h>//bool类型引用库
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>//字符串操作库
 
 
 
@@ -384,6 +385,18 @@ int coins()
 	return 0;
 }
 
+int pointer()
+{
+	int a[10];
+
+	printf("%p\n", &a);
+	printf("%p\n", a);
+	printf("%p\n", &a[0]);
+	printf("%p\n", &a[1]);
+	return 0;
+}
+
+
 int main()
 {
 	/*printf("hello world!!\n");
@@ -438,6 +451,29 @@ int main()
 	//	printf("%d ", a[i]);
 	//}
 	////数组作为函数参数时，要传入数组大小，不能再参数内直接获取数组大小
+
+	//pointer();
+
+	//&i 取i的地址
+	//*p 取p指针（地址）指向（存储）的元素  int* p = &i;
+	//int* p,q; 同 int *p,q;
+	//
+	//函数参数表中的数组实际是指针
+	//数组a = &a[0] 数组就是第一个变量的地址（指针）
+	//[]可以对数组做 也可以对指针做 a[0]  p[0]
+	//*可以对指针做，也可以对数组做 *a = 25
+	//数组变量是const指针，所以不能被赋值
+
+	// char *str = "hello";
+	// char str[] = "hello";
+	//*str字符串只能读不能写 str[]数组形式字符串存在本地变量，可以读写
+	//str用指针的地方：1要求可读 2作为处理参数 3动态分配空间malloc
+
+	// char string[8];//注意char string[8] = "";的写法完全错误
+	//scanf("%7s",string); 安全的输入 只读7个
+
+	//指针字符串记得初始化
+
 
 
 	return 0;
