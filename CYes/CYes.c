@@ -396,6 +396,55 @@ int pointer()
 	return 0;
 }
 
+//语句各单词字符长度统计
+int wordlength()
+{
+	int i = 0;
+	char a;
+	while (1) {
+		scanf("%c", &a);
+		if (a == '.') {
+			if (i != 0) {
+				printf("%d", i);
+			}
+			printf("\n");
+			break;
+		}
+		if (a == ' ') {
+			if (i != 0) {
+				printf("%d ", i);
+				i = 0;
+			}
+		}
+		else {
+			i += 1;
+		}
+	}
+	return 0;
+}
+
+//最简分式
+//本质 辗转相除法求最大公约数
+int simplest()
+{
+	int a, b, temp = 0;
+	scanf("%d/%d", &a, &b);
+	int max = (a > b) ? a : b;
+	int min = a + b - max;
+	temp = max % min;
+	while (temp != 0)
+	{
+		max = min;
+		min = temp;
+		temp = max % min;
+	}
+	printf("%d/%d", a / min, b / min);
+
+
+	return 0;
+}
+
+
 
 int main()
 {
@@ -473,7 +522,8 @@ int main()
 	//scanf("%7s",string); 安全的输入 只读7个
 
 	//指针字符串记得初始化
-
+	//wordlength();
+	simplest();
 
 
 	return 0;
