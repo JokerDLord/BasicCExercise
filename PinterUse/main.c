@@ -180,6 +180,67 @@ int enumidx()
 }
 
 
+//结构
+struct date 
+{
+	int day;
+	int month;
+	int year;
+
+};//结构后可以直接接上实例进行声明
+
+struct time
+{
+	int hour;
+	int minute;
+	int second;
+};
+
+int structuse()
+{
+	//结构变量初始化
+	struct date today = { 25, 2,2020 };
+	struct date thismonth = { .month = 2,.year = 2020 };//=thismonth = (struct date) { 0, 2, 2020 };
+	struct date nextday, tomorrow;
+	nextday = (struct date) { 26, 2, 2020 };
+	tomorrow = nextday;
+	tomorrow.year = 2021;
+
+	printf("this month is %i-%i-%i\n", thismonth.year, thismonth.month, thismonth.day);
+	printf("the next day is %i-%i-%i\n", nextday.year, nextday.month, nextday.day);
+	printf("the next day is %i-%i-%i\n", tomorrow.year, tomorrow.month, tomorrow.day);
+
+	//结构变量地址要用&today取
+}
+
+int numberofdays(struct date d);//在函数内是新建一个结构变量的值 //可以返回一个结构
+bool isLeap(struct date d);
+
+//结构通常传指针入函数
+int structpoint()
+{
+	struct date mydate;
+	struct date* p = &mydate;
+	(*p).month = 12;
+	p->month = 12;//多用这种 arrow
+
+	struct date dates[5] = { {1,1,1}, };//结构数组
+
+	struct dateNtime {
+		struct date date;
+		struct time time;
+	};//
+}
+
+
+//union联合类型 类似于结构  可用来得到整数内部的字节？
+int unionuse() 
+{
+
+}
+
+
+
 int main(int argc, char const *argv[])
 {
 	//int a = 5;
@@ -232,7 +293,12 @@ int main(int argc, char const *argv[])
 	/*enum color t = red;
 	scanf("%d", &t);
 	f(t);*/
-	enumidx();
+	//enumidx();
+
+
+	//structuse();
+
+	//typedef 自定数据类型 typedef 原类型 新名字
 
 
 
