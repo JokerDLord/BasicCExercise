@@ -22,6 +22,29 @@
 
 //#endif
 
+int try()
+{
+	char s[2][3] = { "ab", "cd" };
+	char *p = (char*)s;
+	printf("%c\n", s[1][1]);
+	//printf("%c\n", *++p + 2);
+	printf("%c\n", *++p + 2);
+	
+	return 0;
+}
+
+int try2()
+{
+	struct {
+		int k;
+		char s[30];
+	} a[5] = { 1, "ABC", 2, "abc" }, * p = a;
+	printf("%c\n", *(p)->s);
+	printf("%c\n", *(p++)->s);
+	return 0;
+}
+
+
 
 //位运算
 int bituse()
@@ -73,6 +96,8 @@ int main()
 	}*/
 
 
-	bituse();
+	//bituse();
+
+	try2();
 	return 0;
 }
